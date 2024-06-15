@@ -35,7 +35,7 @@ List of queries:
 
 </details>
 
-5. <details><summary><b>CompanyListSQL</b>: List of companies offering partnership for case studies and class visits.</summary>
+4. <details><summary><b>CompanyListSQL</b>: List of companies offering partnership for case studies and class visits.</summary>
 
     ```sql
    SELECT DISTINCT L.Company
@@ -43,7 +43,7 @@ List of queries:
 
 </details>
 
-7. <details><summary><b>DBAKingNotFac</b>: Capture DBA alumni currently not employed as associate faculty (allows to look for potential teaching candidates).</summary>
+5. <details><summary><b>DBAKingNotFac</b>: Capture DBA alumni currently not employed as associate faculty (allows to look for potential teaching candidates).</summary>
 
     ```sql
     SELECT Alumni_Term_Prog.StudentID, Alumni_Term_Prog.LastName, Alumni_Term_Prog.FirstName, Alumni_Term_Prog.Degree, Alumni_Contact.[Personal Email], Alumni_Contact.City, Alumni_Contact.State
@@ -58,7 +58,7 @@ List of queries:
 
 </details>
 
-8. <details><summary><b>DMD_Inductees</b>: Lists alumni inducted into honorary chapter.</summary>
+6. <details><summary><b>DMD_Inductees</b>: Lists alumni inducted into honorary chapter.</summary>
 
     ```sql
    SELECT Q.StudentID, Q.GradTerm, Q.LastName, Q.FirstName, Q.Degree, Nz(Q.PartnerEmail, C.[Personal Email]) AS [Personal Email], Q.Partner
@@ -66,7 +66,7 @@ List of queries:
 
 </details>
 
-9. <details><summary><b>King_County_Alumni</b>: List of local alumni (based in King County) - intended for promotion of onsite events and class visit planning. </summary>
+7. <details><summary><b>King_County_Alumni</b>: List of local alumni (based in King County) - intended for promotion of onsite events and class visit planning. </summary>
 
     ```sql
    SELECT Alumni_Term_Prog.StudentID, Alumni_Term_Prog.LastName, Alumni_Term_Prog.FirstName, Alumni_Term_Prog.Degree, Alumni_Contact.[Personal Email], Alumni_Contact.City, Alumni_Contact.State
@@ -75,7 +75,7 @@ List of queries:
 
 </details>
 
-10. <details><summary><b>MBA Graduates</b>: List of MBA graduates - accreditation/reporting. </summary>
+8. <details><summary><b>MBA Graduates</b>: List of MBA graduates - accreditation/reporting. </summary>
 
       ```sql
       SELECT StudentID, GradTerm, LastName, FirstName, Degree, Plan
@@ -85,7 +85,7 @@ List of queries:
 
 </details>
 
-11. <details><summary><b>PotentialFacultyLocal</b>: Displays contacts from partner companies potentially interested in teaching. </summary>
+9. <details><summary><b>PotentialFacultyLocal</b>: Displays contacts from partner companies potentially interested in teaching. </summary>
 
      ```sql
     SELECT [Full Name], Company, Email, LinkedIn, [Highest Credentials]
@@ -94,7 +94,7 @@ List of queries:
 
 </details>
 
-12. <details><summary><b>RecentPMs</b>: Shows alumni, including returning students, with degrees/plans in project management - useful for promoting new PM degrees, as well as PMI partnership event promotion.</summary>
+10. <details><summary><b>RecentPMs</b>: Shows alumni, including returning students, with degrees/plans in project management - useful for promoting new PM degrees, as well as PMI partnership event promotion.</summary>
     
     ```sql
     SELECT Alumni_Term_Prog.StudentID, Alumni_Term_Prog.GradTerm, Alumni_Term_Prog.LastName, Alumni_Term_Prog.FirstName, Alumni_Term_Prog.Degree, Alumni_Term_Prog.Plan, Alumni_Term_Prog.[Continuing?], Alumni_Secondary_Degree.Degree AS [Secondary Degree], Alumni_Secondary_Degree.Plan AS [Secondary Plan], Alumni_Secondary_Degree.GradTerm AS [Secondary Grad Term], 
@@ -105,7 +105,7 @@ List of queries:
 
 </details>
 
-13. <details><summary><b>Selected Per Location</b>: Captures total number of alumni in each term per most popular programs across specific international campuses.</summary>
+11. <details><summary><b>Selected Per Location</b>: Captures total number of alumni in each term per most popular programs across specific international campuses.</summary>
 
     ```sql
     SELECT Q.Degree, Q.GradTerm, Q.Country, Count(*) AS [Total Alumni]
@@ -125,7 +125,7 @@ List of queries:
 
 </details>
 
-14. <details><summary><b>Total Alumni Per Program and Term</b>: For capturing retention.</summary>
+12. <details><summary><b>Total Alumni Per Program and Term</b>: For capturing retention.</summary>
 
     ```sql
     SELECT Alumni_Term_Prog.Degree, Alumni_Term_Prog.GradTerm, Count(*) AS [Total Alumni]
