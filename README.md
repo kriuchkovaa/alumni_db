@@ -22,12 +22,12 @@ List of queries:
    FROM Alumni_Term_Prog INNER JOIN Alumni_Contact ON Alumni_Term_Prog.StudentID = Alumni_Contact.StudentID
    WHERE (((Alumni_Contact.[Personal Email]) Alike '%boeing%')); </details>
 
-3. <details><summary><b>College Faculty Alumni</b>: Display CityU alumni currently employed as associate faculty.</summary>
+3. <details><summary><b>Faculty Alumni</b>: Display alumni currently employed as associate faculty.</summary>
 
     ```sql
-   SELECT Alumni_Term_Prog.StudentID, Alumni_Term_Prog.GradTerm, Alumni_Term_Prog.LastName, Alumni_Term_Prog.FirstName, Alumni_Term_Prog.Degree AS [Grad Degree], Alumni_Term_Prog.[CityU Faculty?]
+   SELECT Alumni_Term_Prog.StudentID, Alumni_Term_Prog.GradTerm, Alumni_Term_Prog.LastName, Alumni_Term_Prog.FirstName, Alumni_Term_Prog.Degree AS [Grad Degree], Alumni_Term_Prog.[IsFaculty]
    FROM Alumni_Term_Prog
-   WHERE (((Alumni_Term_Prog.[CityU Faculty?])=Yes));</details>
+   WHERE (((Alumni_Term_Prog.[IsFaculty])=Yes));</details>
 
 4. <details><summary><b>CompanyListSQL</b>: List of companies offering partnership for case studies and class visits.</summary>
 
