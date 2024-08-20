@@ -110,15 +110,15 @@ List of queries:
        ```sql
       SELECT Q.Degree, Q.GradTerm, Q.Country, Count(*) AS [Total Alumni]
       FROM (SELECT Alumni_Term_Prog.Degree, Alumni_Term_Prog.GradTerm, "US" AS Country
-       FROM Alumni_Term_Prog
-       WHERE Alumni_Term_Prog.Degree IN ("BAM", "BSBA", "MBA")
-   
-       UNION ALL
-       
-       SELECT Alumni_Partner.Degree, Alumni_Partner.GradTerm, Alumni_Partner.Country
-       FROM Alumni_Partner
-       WHERE Alumni_Partner.Degree IN ("BAM", "BSBA", "MBA")
-       AND Alumni_Partner.Country NOT IN ("Canada", "China", "Vietnam")
+          FROM Alumni_Term_Prog
+          WHERE Alumni_Term_Prog.Degree IN ("BAM", "BSBA", "MBA")
+      
+          UNION ALL
+          
+          SELECT Alumni_Partner.Degree, Alumni_Partner.GradTerm, Alumni_Partner.Country
+          FROM Alumni_Partner
+          WHERE Alumni_Partner.Degree IN ("BAM", "BSBA", "MBA")
+          AND Alumni_Partner.Country NOT IN ("Canada", "China", "Vietnam")
       )  AS Q
       GROUP BY Q.Degree, Q.GradTerm, Q.Country;
    
