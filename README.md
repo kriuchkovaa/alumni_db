@@ -119,8 +119,8 @@ List of queries:
        FROM Alumni_Partner
        WHERE Alumni_Partner.Degree IN ("BAM", "BSBA", "MBA")
        AND Alumni_Partner.Country NOT IN ("Canada", "China", "Vietnam")
-   )  AS Q
-   GROUP BY Q.Degree, Q.GradTerm, Q.Country;
+      )  AS Q
+      GROUP BY Q.Degree, Q.GradTerm, Q.Country;
    
    </details>
 
