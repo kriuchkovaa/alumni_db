@@ -107,22 +107,22 @@ List of queries:
 
 11. <details><summary><b>Selected Per Location</b>: Captures total number of alumni in each term per most popular programs across specific international campuses.</summary>
 
-    ```sql
-   SELECT Q.Degree, Q.GradTerm, Q.Country, Count(*) AS [Total Alumni]
-   FROM (SELECT Alumni_Term_Prog.Degree, Alumni_Term_Prog.GradTerm, "US" AS Country
-    FROM Alumni_Term_Prog
-    WHERE Alumni_Term_Prog.Degree IN ("BAM", "BSBA", "MBA")
-
-    UNION ALL
-    
-    SELECT Alumni_Partner.Degree, Alumni_Partner.GradTerm, Alumni_Partner.Country
-    FROM Alumni_Partner
-    WHERE Alumni_Partner.Degree IN ("BAM", "BSBA", "MBA")
-    AND Alumni_Partner.Country NOT IN ("Canada", "China", "Vietnam")
-)  AS Q
-GROUP BY Q.Degree, Q.GradTerm, Q.Country;
-
-</details>
+       ```sql
+      SELECT Q.Degree, Q.GradTerm, Q.Country, Count(*) AS [Total Alumni]
+      FROM (SELECT Alumni_Term_Prog.Degree, Alumni_Term_Prog.GradTerm, "US" AS Country
+       FROM Alumni_Term_Prog
+       WHERE Alumni_Term_Prog.Degree IN ("BAM", "BSBA", "MBA")
+   
+       UNION ALL
+       
+       SELECT Alumni_Partner.Degree, Alumni_Partner.GradTerm, Alumni_Partner.Country
+       FROM Alumni_Partner
+       WHERE Alumni_Partner.Degree IN ("BAM", "BSBA", "MBA")
+       AND Alumni_Partner.Country NOT IN ("Canada", "China", "Vietnam")
+   )  AS Q
+   GROUP BY Q.Degree, Q.GradTerm, Q.Country;
+   
+   </details>
 
 12. <details><summary><b>Total Alumni Per Program and Term</b>: For capturing retention.</summary>
 
